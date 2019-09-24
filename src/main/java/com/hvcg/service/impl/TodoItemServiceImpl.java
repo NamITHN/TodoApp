@@ -3,6 +3,7 @@ package com.hvcg.service.impl;
 
 import com.hvcg.model.TodoItem;
 import com.hvcg.repository.TodoItemRepository;
+import com.hvcg.service.TodoItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +13,7 @@ import java.util.Optional;
 
 @Service
 @Transactional
-public class TodoItemServiceImpl {
+public class TodoItemServiceImpl implements TodoItemService {
 
     @Autowired
     TodoItemRepository todoItemRepository;
@@ -31,6 +32,12 @@ public class TodoItemServiceImpl {
     public void delete(Long todoItemId) {
         todoItemRepository.deleteById(todoItemId);
     }
+
+    @Override
+    public void deleteAll() {
+        todoItemRepository.deleteAll();
+    }
+
     public void deleteList(List<Long> todoItemId) {
         todoItemRepository.deleteAllByTodoIdIsIn(todoItemId);
     }

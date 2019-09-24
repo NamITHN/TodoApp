@@ -40,6 +40,11 @@ public class TodoItemController {
         todoItemService.deleteList(idList);
     }
 
+    @DeleteMapping("all")
+    public void delete() {
+        todoItemService.deleteAll();
+    }
+
     @PutMapping("/{id}")
     public TodoItem update(@PathVariable("id") Long todoItemId, @RequestBody TodoItem todoItem) {
         return todoItemService.update(todoItemId, todoItem);

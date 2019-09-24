@@ -11,6 +11,7 @@ public interface TodoItemService {
     List<TodoItem> findAll();
 
     void delete(Long todoItemId);
+    void deleteAll();
 
     TodoItem update(Long todoItemId, TodoItem todoItem);
 
