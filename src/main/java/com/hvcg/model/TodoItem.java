@@ -18,8 +18,7 @@ public class TodoItem implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "todoId", unique = true, nullable = false)
+    @Column(name = "todoId")
     private long todoId;
 
     @Column(name = "todoTitle")
