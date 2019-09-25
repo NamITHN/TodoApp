@@ -2,7 +2,6 @@ package com.hvcg.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import javax.persistence.Id;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -23,13 +22,13 @@ public class TodoItem implements Serializable {
     @Column(name = "todoId", unique = true, nullable = false)
     private long todoId;
 
-    @Column(name = "todoTitle", unique = true)
+    @Column(name = "todoTitle")
     private String todoTitle;
 
-    @Column(name = "todoDescription", unique = true)
+    @Column(name = "todoDescription")
     private String todoDescription;
 
-    @Column(name = "todoTime", unique = true)
+    @Column(name = "todoTime")
     private String todoTime;
 
     public TodoItem() {
